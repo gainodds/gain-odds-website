@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #4153EF;
+
+  --animate-slideIn: slideIn 1s;
+
+  @keyframes slideIn {
+    0%: {
+      left: -500px;
+    }
+
+    100%: {
+      left: 0px;
+    }
+  }
+}
+
+/* background: #505050; */
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* color-scheme: light dark; */
+  color: #111111;
+}
+
+/* button {
+  cursor: pointer;
+} */
+
+.btn {
+  @apply flex justify-center items-center gap-1 px-3 py-2 text-sm sm:text-base rounded-md bg-brand-blue text-white font-semibold enabled:cursor-pointer enabled:hover:shadow-lg enabled:active:scale-95 duration-300
+}
+
+.danger-btn {
+  @apply flex justify-center items-center gap-1 px-3 py-2 rounded-md bg-red-500 text-white font-semibold enabled:cursor-pointer enabled:hover:shadow-lg enabled:active:scale-95 duration-300
+}
+
+.close-btn {
+  @apply enabled:bg-gray-200 enabled:dark:bg-gray-800 enabled:cursor-pointer font-semibold disabled:bg-gray-400 disabled:text-gray-800 disabled:dark:bg-gray-700 px-3 py-2 rounded-md enabled:hover:shadow-md enabled:active:scale-95 duration-300
+}
+
+/* .input {
+  @apply border border-[#D7DBE0] rounded-lg outline-none p-3 w-full dark:bg-gray-600 
+} */
+.input {
+  @apply outline-none block p-2.5 text-sm w-full border border-gray-300 rounded-lg bg-gray-50 disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:disabled:bg-gray-800 disabled:cursor-not-allowed focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
+
+select {
+  cursor: pointer;
+}
+
+.selectInput {
+  @apply outline-none border bg-gray-50 border-gray-300 placeholder-gray-300 disabled:bg-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:disabled:bg-gray-600 disabled:cursor-not-allowed p-2.5 rounded-lg md:min-w-32 text-sm focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
+
+.checkInput {
+  @apply size-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 disabled:cursor-not-allowed
+}
+
+.radio-input-label {
+  @apply flex items-center gap-1 cursor-pointer
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  display: none;
+}
