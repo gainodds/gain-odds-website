@@ -1,13 +1,13 @@
+import Sidebar from "@/components/ui/Sidebar";
 import { Outlet } from "react-router-dom";
 
 const AppLayout = () => {
   return (
-    <div className="h-screen dark:bg-gray-950 dark:text-gray-100 p-3">
-      <header className="flex justify-between dark:bg-gray-800 p-3 rounded">
-        logo
-        <nav>asdas</nav>
-      </header>
-      <Outlet />
+    <div className="h-screen flex">
+      <Sidebar />
+      <main className="bg-brand-bg text-gray-100 flex-1">
+        <Outlet />
+      </main>
     </div>
   );
 };

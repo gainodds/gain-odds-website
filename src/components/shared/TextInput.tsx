@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { MdSearch } from "react-icons/md";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -21,10 +22,11 @@ const TextInput = ({
   ...attr
 }: Props) => {
   return (
-    <label htmlFor={name} className={`block ${extraClass}`}>
-      <span className="capitalize font-medium  text-sm xl:text-base ">
-        {label}
-      </span>
+    <label htmlFor={name} className={`relative block ${extraClass}`}>
+      <span className="capitalize font-medium  text-sm  ">{label}</span>
+      {attr.type === "search" && (
+        <MdSearch className="absolute top-2 left-2 size-6 text-[#A8B3BD]" />
+      )}
       <input
         name={name}
         required
@@ -32,7 +34,9 @@ const TextInput = ({
         onChange={onChange}
         disabled={disabled}
         {...attr}
-        className={`outline-none p-2.5 text-sm w-full border border-gray-300 rounded-lg bg-gray-50 disabled:bg-gray-200 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 ${inputClass}`}
+        className={`outline-none p-2.5 text-sm w-full rounded-lg disabled:bg-gray-200 bg-[#182A38]  dark:placeholder-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 ${inputClass} ${
+          attr.type === "search" && "pl-10"
+        }`}
       />
     </label>
   );

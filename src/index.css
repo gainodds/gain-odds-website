@@ -2,6 +2,10 @@
 
 @theme {
   --color-brand-blue: #4153EF;
+  --color-brand-green: #14B01D;
+  --color-brand-bg: #0D1D28;
+  --color-brand-bgDark: #111111;
+  --color-divide: #E2E5E933;
 
   --animate-slideIn: slideIn 1s;
 
