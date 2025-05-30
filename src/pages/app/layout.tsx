@@ -3,9 +3,9 @@ import { Outlet } from "react-router-dom";
 
 const AppLayout = () => {
   return (
-    <div className="h-screen flex">
+    <div className="h-screen bg-brand-bg flex overflow-hidden">
       <Sidebar />
-      <main className="bg-brand-bg text-gray-100 flex-1">
+      <main className=" text-gray-100 flex-1">
         <Outlet />
       </main>
     </div>

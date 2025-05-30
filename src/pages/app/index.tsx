@@ -3,9 +3,10 @@ import OddsCard from "@/components/ui/OddsCard";
 
 const Home = () => {
   return (
-    <div className=" divide-x-2 divide-divide flex h-full">
-      <aside className="py-3 px-14">asinde muni</aside>
-      <div className="divide-y-2 divide-divide space-y-3 flex-1">
+    <div className=" divide-x-2 divide-divide flex">
+      <aside className="py-3 px-8 md:px-14">asinde muni</aside>
+
+      <div className="divide-y-2 divide-divide space-y-3 flex-1 overflow-y-auto">
         <header className="p-3">
           <TextInput
             type="search"
@@ -15,18 +16,17 @@ const Home = () => {
         </header>
 
         <div className="flex p-3 gap-3">
-          <div className="basis-4/5 space-y-5">
+          <div className="flex-1 lg:basis-4/5 space-y-5 ">
             {/* Hot matches section */}
             <section className="space-y-2">
               <h2 className="text-lg md:text-2xl font-medium">Hot Matches</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2">
                 <OddsCard title=" UEFA Champions League" />
                 <OddsCard title=" UEFA Champions League" />
                 <OddsCard title=" UEFA Champions League" />
                 <OddsCard title=" UEFA Champions League" />
               </div>
             </section>
-
             {/* Champions league section */}
             <section className="space-y-2">
               <h2 className="text-lg md:text-2xl font-medium">
@@ -41,7 +41,7 @@ const Home = () => {
             </section>
           </div>
 
-          <aside className="basis-1/5 bg-brand-bgDark/50 rounded-md h-full space-y-6">
+          <aside className="hidden lg:block basis-1/5 bg-brand-bgDark/50 rounded-md h-full space-y-6">
             <form className="p-3 space-y-3">
               <TextInput placeholder="Enter phone/email" label="Phone/email" />
               <TextInput
@@ -51,7 +51,7 @@ const Home = () => {
               />
               <button className="border border-brand-green bg-transparent w-full rounded-lg p-1.5 text-brand-green cursor-pointer">
                 Enter
-              </button>
+              </button>{" "}
             </form>
 
             <img src="/promo_banner.png" alt="promo banner" loading="lazy" />
