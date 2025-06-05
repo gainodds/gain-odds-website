@@ -4,7 +4,7 @@ interface Props {
 
 const OddsCard = ({ title }: Props) => {
   return (
-    <div className="bg-[#1B2D3B] hover:bg-[#11111180] duration-300 flex flex-col gap-4 py-3 px-2 rounded-md snap-start snap-normal resize">
+    <div className="bg-brand-gray hover:bg-[#11111180] duration-300 flex flex-col gap-4 py-4 px-3 lg:py-5 lg:px-4 rounded-md snap-start snap-normal resize">
       <p className="text-[#D7DBE0] text-center font-medium text-xs sm:text-sm ">
         {title}
       </p>
@@ -28,15 +28,15 @@ const OddsCard = ({ title }: Props) => {
         </div>
       </div>
 
-      <div className="flex justify-around gap-1 text-xs md:text-sm">
-        <button className="border border-white/10 py-1 px-2 rounded flex gap-1">
+      <div className="flex justify-around gap-1 lg:gap-2 text-xs md:text-sm">
+        <button className="border border-white/10 py-1 px-2 rounded flex gap-1 cursor-pointer">
           <span className="text-gray-400">1 </span>
           <span>1.22</span>
         </button>
-        <button className="border border-white/10 py-1 px-2 rounded flex gap-1">
+        <button className="border border-white/10 py-1 px-2 rounded flex gap-1 cursor-pointer">
           <span className="text-gray-400">X </span> <span>1.3</span>
         </button>
-        <button className="border border-white/10 py-1 px-2 rounded flex gap-1">
+        <button className="border border-white/10 py-1 px-2 rounded flex gap-1 cursor-pointer">
           <span className="text-gray-400">2 </span>
           <span>7.06</span>
         </button>

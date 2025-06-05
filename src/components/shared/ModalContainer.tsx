@@ -36,7 +36,7 @@ const ModalContainer = ({
           </div>
         )}
 
-        <main className=" h-full p-4">{children}</main>
+        <main className="h-full p-4">{children}</main>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { useState } from "react";
 import ModalContainer from "@/components/shared/ModalContainer";
 import TextInput from "@/components/shared/TextInput";
 import OddsCard from "@/components/ui/OddsCard";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [signupModalOpen, setsignupModalOpen] = useState(false);
@@ -20,89 +21,117 @@ const Home = () => {
   };
 
   return (
-    <div className="divide-x-2 divide-divide h-full overflow-y-auto flex md:min-h-screen md:overflow-hidden ">
-      <aside className="hidden md:block py-3 px-8 md:px-14">aside menu</aside>
+    <div className="divide-y-2 divide-divide space-y-3 flex-1 overflow-y-auto md:min-h-screen  h-full ">
+      <header className="p-3 fixed md:sticky top-0 bg-brand-bg z-10 w-full flex items-center justify-between gap-3 ">
+        <TextInput
+          type="search"
+          placeholder="Search league, teams, competition"
+          extraClass="sm:w-full sm:max-w-xs lg:max-w-xl xl:max-w-2xl"
+        />
+        <div className="bg-brand-bgDark/50 rounded-md flex items-center gap-2 px-3 py-2">
+          <button className="btn !px-4" onClick={toggleLoginModal}>
+            Sign in
+          </button>
+        </div>
+      </header>
 
-      <div className="divide-y-2 divide-divide space-y-3 flex-1 overflow-y-auto  md:overflow-y-auto">
-        <header className="p-3 fixed md:sticky top-0 bg-brand-bg z-10 w-full flex items-center justify-between gap-3 ">
-          <TextInput
-            type="search"
-            placeholder="Search league, teams, competition"
-            extraClass="sm:w-full sm:max-w-xs lg:max-w-xl xl:max-w-2xl"
-          />
-          <div className="bg-brand-bgDark/50 rounded-md flex items-center gap-2 px-3 py-2">
-            <button className="btn !px-4" onClick={toggleLoginModal}>
-              Sign in
-            </button>
-          </div>
-        </header>
-
-        <div className="flex p-3 gap-3 mt-20 md:mt-0 ">
-          {/* Right side main screen */}
-          <div className="flex-1 lg:basis-4/5 space-y-3 mb-16 md:mb-0 overflow-x-hidden">
-            <div className="md:hidden w-full">
-              <img
-                src="/mobile_promo_banner.png"
-                alt="promo banner"
-                loading="lazy"
-                className="w-full"
-              />
-            </div>
-            {/* Hot matches section */}
-            <section className="space-y-2">
-              <h2 className="text-lg md:text-2xl font-medium">Hot Matches</h2>
-              <div className="flex gap-2 overflow-x-scroll snap-x lg:scrollbar-default ">
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-              </div>
-            </section>
-            {/* Champions league section */}
-            <section className="space-y-2">
-              <h2 className="text-lg md:text-2xl font-medium">
-                Champions League
-              </h2>
-              <div className="flex gap-2 overflow-x-scroll scrollbar-hidden">
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-                <OddsCard title=" UEFA Champions League" />
-              </div>
-            </section>
-          </div>
-
-          <aside className="hidden lg:block basis-1/5 sticky top-0 bg-brand-bgDark/50 rounded-md h-full space-y-6">
-            <form className="p-3 space-y-2">
-              <TextInput placeholder="Enter code" label="Booking code" />
-              <button className="btn">Load</button>
-            </form>
+      <div className="flex p-3 gap-3 mt-20 md:mt-0 overflow-y-scroll h-full">
+        {/* Right side main screen */}
+        <div className="flex-1 lg:basis-4/5 space-y-3 mb-16 md:mb-0 overflow-x-hidden ">
+          <div className="md:hidden w-full">
             <img
-              src="/promo_banner.png"
+              src="/mobile_promo_banner.png"
               alt="promo banner"
               loading="lazy"
-              className="h-44 w-full"
+              className="w-full"
             />
+          </div>
+          {/* Hot matches section */}
+          <section className="space-y-2">
+            <h2 className="text-lg md:text-2xl font-medium">Hot Matches</h2>
+            <div className="flex gap-2 overflow-x-scroll snap-x lg:scrollbar-default ">
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+            </div>
+          </section>
+          {/* Champions league section */}
+          {/* <section className="space-y-2">
+            <h2 className="text-lg md:text-2xl font-medium">
+              Champions League
+            </h2>
+            <div className="flex gap-2 overflow-x-scroll scrollbar-hidden">
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+              <OddsCard title=" UEFA Champions League" />
+            </div>
+          </section> */}
 
-            <form className="p-3 space-y-3">
-              <TextInput placeholder="Enter phone/email" label="Phone/email" />
-              <TextInput
-                placeholder="Enter password"
-                label="Password"
-                type="password"
+          {/* Virtual games section */}
+          <section className="space-y-2">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg md:text-2xl font-medium">Virtual Games</h2>
+              <Link to="/virtual" className="!w-[unset] btn-main px-4">
+                See all
+              </Link>
+            </div>
+            <div className="flex gap-4 overflow-x-scroll scrollbar-hidden">
+              <img
+                src="/virtual1.png"
+                alt="Virtual Games"
+                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer"
               />
-              <button className="btn">Enter</button>
-            </form>
-          </aside>
+              <img
+                src="/virtual2.png"
+                alt="Virtual Games"
+                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer"
+              />
+              <img
+                src="/virtual3.png"
+                alt="Virtual Games"
+                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer"
+              />
+              <img
+                src="/virtual4.png"
+                alt="Virtual Games"
+                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer"
+              />
+            </div>
+          </section>
         </div>
+
+        <aside className="hidden lg:block basis-1/5 sticky top-0 h-fit bg-brand-bgDark/50 rounded-md space-y-6">
+          <form className="p-3 space-y-2">
+            <TextInput placeholder="Enter code" label="Booking code" />
+            <button className="btn">Load</button>
+          </form>
+          <img
+            src="/promo_banner.png"
+            alt="promo banner"
+            loading="lazy"
+            className="h-44 w-full"
+          />
+
+          <form className="p-3 space-y-3">
+            <TextInput placeholder="Enter phone/email" label="Phone/email" />
+            <TextInput
+              placeholder="Enter password"
+              label="Password"
+              type="password"
+            />
+            <button className="btn">Enter</button>
+          </form>
+        </aside>
       </div>
 
       {/* Modal for login */}
