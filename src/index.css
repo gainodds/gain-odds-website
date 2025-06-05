@@ -6,6 +6,7 @@
   --color-brand-bg: #0D1D28;
   --color-brand-bgDark: #111111;
   --color-divide: #E2E5E933;
+  --color-label: #9F9F9F;
 
   --animate-slideIn: slideIn 1s;
 
@@ -34,7 +35,11 @@
 } */
 
 .btn {
-  @apply flex justify-center items-center gap-1 px-3 py-2 text-sm sm:text-base rounded-md bg-brand-blue text-white font-semibold enabled:cursor-pointer enabled:hover:shadow-lg enabled:active:scale-95 duration-300
+  @apply border border-brand-green bg-transparent font-medium w-full rounded-lg p-1.5 text-brand-green hover:bg-brand-green hover:text-white duration-300 cursor-pointer
+}
+
+.btn-main {
+  @apply border bg-brand-green w-full font-semibold rounded-lg py-2 cursor-pointer border-none
 }
 
 .danger-btn {
@@ -69,9 +74,13 @@ select {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  background: transparent;
+  width: 1px;
 }
 
 ::-webkit-scrollbar-thumb {
-  display: none;
+  @apply bg-gray-800;
+  background-clip: padding-box;
+  border: 6px solid transparent;
+  border-radius: 99px;
 }

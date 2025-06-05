@@ -1,68 +1,114 @@
+import { cloneElement } from "react";
+import { BiGame } from "react-icons/bi";
+import { IoReceipt } from "react-icons/io5";
 import {
   MdOutlineMenu,
-  MdSportsBaseball,
-  MdSportsBasketball,
-  MdSportsFootball,
+  // MdSportsBaseball,
+  // MdSportsBasketball,
+  // MdSportsFootball,
   MdSportsSoccer,
-  MdSportsTennis,
+  // MdSportsTennis,
 } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { RiHome5Fill, RiUserFill } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
+  // const routes = [
+  //   {
+  //     icon: <MdSportsSoccer className="md:size-4 lg:size-5" />,
+  //     path: "soccer",
+  //   },
+  //   {
+  //     icon: <MdSportsBasketball className="md:size-4 lg:size-5" />,
+  //     path: "Basketball",
+  //   },
+  //   {
+  //     icon: <MdSportsFootball className="md:size-4 lg:size-5" />,
+  //     path: "American football",
+  //   },
+
+  //   {
+  //     icon: <MdSportsBaseball className="md:size-4 lg:size-5" />,
+  //     path: "Baseball",
+  //   },
+  //   {
+  //     icon: <MdSportsTennis className="md:size-4 lg:size-5" />,
+  //     path: "football",
+  //   },
+  // ];
+
   const routes = [
     {
+      icon: <RiHome5Fill className="md:size-4 lg:size-5 rounded-b-full" />,
+      path: "",
+      label: "Home",
+    },
+    {
       icon: <MdSportsSoccer className="md:size-4 lg:size-5" />,
-      path: "soccer",
+      path: "sports",
+      label: "Sports",
     },
     {
-      icon: <MdSportsBasketball className="md:size-4 lg:size-5" />,
-      path: "Basketball",
+      icon: <BiGame className="md:size-4 lg:size-5" />,
+      path: "virtual",
+      label: "Virtual",
     },
     {
-      icon: <MdSportsFootball className="md:size-4 lg:size-5" />,
-      path: "American football",
+      icon: <IoReceipt className="md:size-4 lg:size-5" />,
+      path: "my-bets",
+      label: "My bets",
     },
+    // {
+    //   icon: <IoGameController className="md:size-4 lg:size-5" />,
+    //   path: "games",
+    //   label: "Games",
+    // },
 
     {
-      icon: <MdSportsBaseball className="md:size-4 lg:size-5" />,
-      path: "Baseball",
-    },
-    {
-      icon: <MdSportsTennis className="md:size-4 lg:size-5" />,
-      path: "football",
+      icon: <RiUserFill className="md:size-4 lg:size-5" />,
+      path: "profile",
+      label: "Profile",
     },
   ];
 
-  const p = "soccer";
-
   return (
-    <nav className="bg-brand-bgDark/50 text-white px-3 pt-5 flex flex-col gap-5">
+    <nav className="hidden bg-brand-bgDark/50 text-white px-3 pt-5 md:flex flex-col items-center gap-5">
       <button className="p-2 rounded-full bg-[#152A38] mb-3">
         <MdOutlineMenu className="md:size-4 lg:size-5" />
       </button>
 
       {routes.map((route) => (
-        <Link
-          title={route.path}
-          to={route.path}
+        <NavLink
+          title={route.label}
           key={route.path}
-          className={`p-2 ${
-            p === route.path ? "rounded-full bg-[#37AF01] " : ""
-          }`}
+          to={route.path}
+          className={({ isActive }: { isActive: boolean }) =>
+            `flex flex-col items-center gap-1 ${
+              isActive ? "text-brand-green" : "text-gray-200"
+            }`
+          }
         >
-          {route.icon}
-        </Link>
-
-        // <NavLink
-        //   to={route.path}
-        //   className={({ isActive }) =>
-        //     isActive
-        //       ? "text-white text-sm font-medium rounded-r-full shadow-lg active:scale-95 duration-300 bg-brand-blue p-3 flex gap-3 items-center"
-        //       : "p-3 flex gap-3 font-medium items-center duration-200 text-sm"
-        //   }
-        // >
-        //   {route.icon}
-        // </NavLink>
+          {({ isActive }: { isActive: boolean }) => (
+            <>
+              {cloneElement(route.icon, {
+                className: `${route.icon.props.className} ${
+                  isActive
+                    ? "text-brand-green"
+                    : !isActive && route.path == "virtual"
+                    ? "text-red-500 "
+                    : "text-gray-200"
+                } transition-colors duration-200`,
+              })}
+              <span
+                className={`text-sm ${
+                  isActive ? "font-semibold" : " font-medium"
+                }`}
+              >
+                {route.label}
+              </span>
+            </>
+          )}
+        </NavLink>
       ))}
     </nav>
   );
