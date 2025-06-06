@@ -9,6 +9,8 @@
   --color-divide: #E2E5E933;
   --color-label: #9F9F9F;
 
+  --breakpoint-xxs: 360px;
+  --breakpoint-xs: 400px;
   --animate-slideIn: slideIn 1s;
 
   @keyframes slideIn {

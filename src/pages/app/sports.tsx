@@ -28,7 +28,7 @@ const SportsPage = () => {
           <TextInput
             type="search"
             placeholder="Search league, teams, competition"
-            extraClass="sm:w-full sm:max-w-xs lg:max-w-xl xl:max-w-2xl"
+            extraClass="w-full max-w-44 xxs:max-w-52 xs:max-w-64 sm:max-w-xs lg:max-w-xl xl:max-w-2xl"
           />
           <div className="bg-brand-bgDark/50 rounded-md flex items-center gap-2 px-3 py-2">
             <button className="btn !px-4" onClick={toggleLoginModal}>
@@ -37,15 +37,7 @@ const SportsPage = () => {
           </div>
         </header>
 
-        <div className="p-3 flex-1 lg:basis-4/5 space-y-3 mb-16 md:mb-0 overflow-x-hidden">
-          <div className="md:hidden w-full">
-            <img
-              src="/mobile_promo_banner.png"
-              alt="promo banner"
-              loading="lazy"
-              className="w-full"
-            />
-          </div>
+        <div className="p-3 flex-1 lg:basis-4/5 space-y-3 mt-20 mb-16 md:mb-0 overflow-x-hidden">
           {/* Hot matches section */}
           <section className="space-y-2">
             <h2 className="text-lg md:text-2xl font-medium">Hot Matches</h2>

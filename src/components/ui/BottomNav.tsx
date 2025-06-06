@@ -64,7 +64,7 @@ const BottomNav = () => {
                   } transition-colors duration-200`,
                 })}
                 <span
-                  className={`text-sm ${
+                  className={`text-xs xxs:text-sm ${
                     isActive ? " font-semibold" : "font-medium"
                   }`}
                 >

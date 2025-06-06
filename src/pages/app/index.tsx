@@ -26,7 +26,7 @@ const Home = () => {
         <TextInput
           type="search"
           placeholder="Search league, teams, competition"
-          extraClass="sm:w-full sm:max-w-xs lg:max-w-xl xl:max-w-2xl"
+          extraClass="w-full max-w-44 xxs:max-w-52 xs:max-w-64 sm:max-w-xs lg:max-w-xl xl:max-w-2xl"
         />
         <div className="bg-brand-bgDark/50 rounded-md flex items-center gap-2 px-3 py-2">
           <button className="btn !px-4" onClick={toggleLoginModal}>
@@ -85,26 +85,26 @@ const Home = () => {
                 See all
               </Link>
             </div>
-            <div className="flex gap-4 overflow-x-scroll scrollbar-hidden">
+            <div className="flex gap-4 overflow-x-scroll scrollbar-hidden snap-x ">
               <img
                 src="/virtual1.png"
                 alt="Virtual Games"
-                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer"
+                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer snap-start snap-normal"
               />
               <img
                 src="/virtual2.png"
                 alt="Virtual Games"
-                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer"
+                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer snap-start snap-normal"
               />
               <img
                 src="/virtual3.png"
                 alt="Virtual Games"
-                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer"
+                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer snap-start snap-normal"
               />
               <img
                 src="/virtual4.png"
                 alt="Virtual Games"
-                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer"
+                className="transition-transform duration-300 ease-in-out lg:hover:scale-110 cursor-pointer snap-start snap-normal"
               />
             </div>
           </section>

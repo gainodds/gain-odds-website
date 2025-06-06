@@ -4,7 +4,7 @@ interface Props {
 
 const OddsCard = ({ title }: Props) => {
   return (
-    <div className="bg-brand-gray hover:bg-[#11111180] duration-300 flex flex-col gap-4 py-4 px-3 lg:py-5 lg:px-4 rounded-md snap-start snap-normal resize">
+    <div className="bg-brand-gray hover:bg-[#11111180] duration-300 flex flex-col gap-4 py-4 px-3 lg:py-5 lg:px-4 rounded-md snap-start snap-normal">
       <p className="text-[#D7DBE0] text-center font-medium text-xs sm:text-sm ">
         {title}
       </p>
