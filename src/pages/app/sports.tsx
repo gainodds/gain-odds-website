@@ -37,7 +37,7 @@ const SportsPage = () => {
           </div>
         </header>
 
-        <div className="p-3 flex-1 lg:basis-4/5 space-y-3 mt-20 mb-16 md:mb-0 overflow-x-hidden">
+        <div className="p-3 flex-1 lg:basis-4/5 space-y-3 mt-20 mb-16 md:my-0 overflow-x-hidden">
           {/* Hot matches section */}
           <section className="space-y-2">
             <h2 className="text-lg md:text-2xl font-medium">Hot Matches</h2>
