@@ -3,6 +3,7 @@ import ModalContainer from "@/components/shared/ModalContainer";
 import TextInput from "@/components/shared/TextInput";
 import OddsCard from "@/components/ui/OddsCard";
 import { Link } from "react-router-dom";
+import OddsTable from "@/components/ui/OddsTable";
 
 const Home = () => {
   const [signupModalOpen, setsignupModalOpen] = useState(false);
@@ -21,7 +22,7 @@ const Home = () => {
   };
 
   return (
-    <div className="divide-y-2 divide-divide space-y-3 flex-1 overflow-y-auto md:min-h-screen  h-full ">
+    <div className="divide-y-2 divide-divide space-y-3 flex-1 overflow-y-auto h-full">
       <header className="p-3 fixed md:sticky top-0 bg-brand-bg z-10 w-full flex items-center justify-between gap-3 ">
         <TextInput
           type="search"
@@ -35,7 +36,7 @@ const Home = () => {
         </div>
       </header>
 
-      <div className="flex p-3 gap-3 mt-20 md:mt-0 overflow-y-scroll h-full">
+      <div className="flex p-3 gap-3 mt-20 md:mt-0 overflow-y-scroll">
         {/* Right side main screen */}
         <div className="flex-1 lg:basis-4/5 space-y-3 mb-16 md:mb-0 overflow-x-hidden ">
           <div className="md:hidden w-full">
@@ -59,23 +60,6 @@ const Home = () => {
               <OddsCard title=" UEFA Champions League" />
             </div>
           </section>
-          {/* Champions league section */}
-          {/* <section className="space-y-2">
-            <h2 className="text-lg md:text-2xl font-medium">
-              Champions League
-            </h2>
-            <div className="flex gap-2 overflow-x-scroll scrollbar-hidden">
-              <OddsCard title=" UEFA Champions League" />
-              <OddsCard title=" UEFA Champions League" />
-              <OddsCard title=" UEFA Champions League" />
-              <OddsCard title=" UEFA Champions League" />
-              <OddsCard title=" UEFA Champions League" />
-              <OddsCard title=" UEFA Champions League" />
-              <OddsCard title=" UEFA Champions League" />
-              <OddsCard title=" UEFA Champions League" />
-              <OddsCard title=" UEFA Champions League" />
-            </div>
-          </section> */}
 
           {/* Virtual games section */}
           <section className="space-y-2">
@@ -110,7 +94,7 @@ const Home = () => {
           </section>
         </div>
 
-        <aside className="hidden lg:block basis-1/5 sticky top-0 h-fit bg-brand-bgDark/50 rounded-md space-y-6">
+        <aside className="hidden lg:block basis-1/5  sticky top-0 bg-brand-bgDark/50 rounded-md space-y-6">
           <form className="p-3 space-y-2">
             <TextInput placeholder="Enter code" label="Booking code" />
             <button className="btn">Load</button>
@@ -119,7 +103,7 @@ const Home = () => {
             src="/promo_banner.png"
             alt="promo banner"
             loading="lazy"
-            className="h-44 w-full"
+            className="h-52 w-full"
           />
 
           <form className="p-3 space-y-3">
@@ -131,6 +115,16 @@ const Home = () => {
             />
             <button className="btn">Enter</button>
           </form>
+
+          <div className="p-3 space-y-2">
+            <h3 className="text-lg font-medium">Daily Spinner</h3>
+            <img
+              src="/daily_spinner.png"
+              alt="daily spinner"
+              loading="lazy"
+              className="w-full"
+            />
+          </div>
         </aside>
       </div>
 
