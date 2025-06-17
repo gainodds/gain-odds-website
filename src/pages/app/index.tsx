@@ -77,6 +77,15 @@ const Home = () => {
             </div>
           </section>
 
+          {/* Odds Table section */}
+          <section>
+            <h2 className="text-lg md:text-2xl font-medium">Live Odds</h2>
+
+            <div className="overflow-x-scroll scrollbar-hidden">
+              <LiveOddsTable />
+            </div>
+          </section>
+
           {/* Virtual games section */}
           <section className="space-y-2">
             <div className="flex items-center justify-between">
@@ -110,7 +119,7 @@ const Home = () => {
           </section>
         </div>
 
-        <aside className="hidden lg:block basis-1/5  sticky top-0 bg-brand-bgDark/50 rounded-md space-y-6">
+        <aside className="hidden lg:block basis-1/5 sticky top-0 bg-brand-bgDark/50 rounded-md space-y-6 h-fit">
           <form className="p-3 space-y-2">
             <TextInput placeholder="Enter code" label="Booking code" />
             <button className="btn">Load</button>
