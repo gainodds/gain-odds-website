@@ -3,6 +3,7 @@ import TextInput from "@/components/shared/TextInput";
 import SportsAsidebar from "@/components/ui/SportsAsidebar";
 import OddsCard from "@/components/ui/OddsCard";
 import { useState } from "react";
+import { BiBell } from "react-icons/bi";
 
 const SportsPage = () => {
   const [signupModalOpen, setsignupModalOpen] = useState(false);
@@ -30,10 +31,25 @@ const SportsPage = () => {
             placeholder="Search league, teams, competition"
             extraClass="w-full max-w-44 xxs:max-w-52 xs:max-w-64 sm:max-w-xs lg:max-w-xl xl:max-w-2xl"
           />
-          <div className="bg-brand-bgDark/50 rounded-md flex items-center gap-2 px-3 py-2">
-            <button className="btn !px-4" onClick={toggleLoginModal}>
-              Sign in
+          <div className="flex items-center gap-2 sm:gap-5">
+            <div className="hidden md:block bg-[#182A38] rounded-full pl-2 pr-3 py-2 cursor-pointer">
+              <select
+                name="language"
+                id="language"
+                className="bg-[#182A38] outline-none px-3"
+              >
+                <option value="en">EN</option>
+                <option value="fr">FR</option>
+              </select>
+            </div>
+            <button className="rounded-full bg-[#182A38] p-2 md:p-3 cursor-pointer hover:bg-[#182A38]/80 duration-300">
+              <BiBell className="size-4 md:size-5" />
             </button>
+            <div className="bg-brand-bgDark/50 rounded-md flex items-center gap-2 px-2 py-1.5 sm:px-3 sm:py-2">
+              <button className="btn !px-4" onClick={toggleLoginModal}>
+                Sign in
+              </button>
+            </div>
           </div>
         </header>
 
