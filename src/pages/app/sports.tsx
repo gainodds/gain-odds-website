@@ -29,10 +29,10 @@ const SportsPage = () => {
           <TextInput
             type="search"
             placeholder="Search league, teams, competition"
-            extraClass="w-full max-w-44 xxs:max-w-52 xs:max-w-64 sm:max-w-xs lg:max-w-xl xl:max-w-2xl"
+            extraClass="w-full max-w-38 xxs:max-w-46 xs:max-w-56 sm:max-w-xs lg:max-w-xl xl:max-w-2xl"
           />
           <div className="flex items-center gap-2 sm:gap-5">
-            <div className="hidden md:block bg-[#182A38] rounded-full pl-2 pr-3 py-2 cursor-pointer">
+            <div className="hidden md:block bg-[#182A38] rounded-full pl-1 pr-3 py-2 cursor-pointer">
               <select
                 name="language"
                 id="language"
@@ -43,9 +43,9 @@ const SportsPage = () => {
               </select>
             </div>
             <button className="rounded-full bg-[#182A38] p-2 md:p-3 cursor-pointer hover:bg-[#182A38]/80 duration-300">
-              <BiBell className="size-4 md:size-5" />
+              <BiBell className="size-4 xxs:size-5 md:size-6" />
             </button>
-            <div className="bg-brand-bgDark/50 rounded-md flex items-center gap-2 px-2 py-1.5 sm:px-3 sm:py-2">
+            <div className="bg-brand-bgDark/50 rounded-md flex items-center gap-2 p-1 xxs:px-2 xxs:py-1.5 sm:px-3 sm:py-2">
               <button className="btn !px-4" onClick={toggleLoginModal}>
                 Sign in
               </button>
